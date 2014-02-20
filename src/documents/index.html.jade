@@ -27,7 +27,17 @@ section
 			li Zurücksetzen auf funktionierenden Stand
 
 	section
-		h3 Verteilt vs zentral
+		h1  zentral 
+			small vs
+			|  Verteilt
+
+	section
+		h3 Zentral
+		img.no-border(src='/img/centralized.svg')
+
+	section
+		h3 Verteilt
+		img.no-border(src='/img/decentralized.svg')
 
 section
 	section
@@ -55,6 +65,15 @@ section
 	section
 		h4 nimms weg!
 		h2 cp, mv, rm, .gitignore, reset
+
+	section
+		pre: code(data-trim)
+			| git init
+			| derp
+		pre(data-trim): code
+			| git add
+			| derp
+
 
 section
 	section
@@ -103,6 +122,4 @@ section
 section
 	section
 		h4 pssst, bonus-material
-section
-	pre: code(data-trim)
-		| $> git init
+
