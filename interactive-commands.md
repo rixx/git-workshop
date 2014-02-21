@@ -18,7 +18,7 @@ git commit
 
 git checkout master
 git commit
-git merge vikings --no-ff
+git merge vikings
 git commit
 
 git checkout vikings
