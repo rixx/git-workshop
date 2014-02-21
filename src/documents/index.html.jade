@@ -1,30 +1,28 @@
 ---
 layout: 'default'
-title: 'GITGITGIT'
+title: "rixx' Git-Workshop im shack"
 ---
+
+// Idee:
+// alles in Tutorial-/Gaming-Style: isn Tutorial, hat Erklärungen, single-player, mehr Level (branches), multi-player (mit u. ohne FF)
+// das geht dann auch nahtlos in den geplanten git war über
+
 section
 	h1 Git Intro
-	h4 für Kacknoobs
+	h4 für Einsteiger
 
-// INTRO
+
 section
 	section
 		h2 Was ist ein
 		h1 Version Control System
 	
-		aside.notes
-			ul
-				li rettet dich, wenn du dinge kacke machst
-				li lässt dich frei experimentieren
-				li auf ordentlichen stand resetten
-				li gut collaborieren
-	
 	section
 		h2 Features
 		ul
+			li Savepoints
+			li Co-Op 					
 			li Freies Experimentieren
-			li Ermöglicht gutes Kollaborieren
-			li Zurücksetzen auf funktionierenden Stand
 
 	section
 		h1  zentral 
@@ -42,38 +40,105 @@ section
 section
 	section
 		h1 Basics
-		h4 um alleine anzufangen
+		h4 git: das Tutorial
 
 	section
 		h2 Setup und Konfiguration
+		pre: code(data-trim)
+			| git config --global user.name "icke"
+
+		pre: code(data-trim)
+			| git config --global user.email icke@kiez.de
 
 	section
 		h2 git-Sektionen
+		// rash: repo + working directory
 
 	section
 		h4 anfangen
 		h2 init
+		pre: code(data-trim)
+			| git init 				# erstellt ein neues Repo
 	
+
 	section
 		h4 arbeiten
-		h2 add, commit, amend
+		h2 staging area
+		// rash: repo + working directory + staging dazwischen
+
+	section
+		h4 arbeiten
+		h2 add, commit
+		pre: code(data-trim)
+			| git add 				# working directory → staging area
+		// rash: kommentare gleichweit einrücken, farben sind random
+		// rash: größerer Abstand zwischen code-zeilen?
 	
+		pre: code(data-trim)
+			| git commit [--all] [-m 'Nachricht']			# staging area → repo
+		// rash: commit early, commit often
+
+	section
+		h4 arbeiten
+		h2 amend
+
+		pre: code(data-trim)
+			| git commit --amend	# ergänzt den letzten Commit
+
 	section
 		h4 angucken
-		h2 log, status, diff
+		h2 status, log, diff
+		pre: code(data-trim)
+			| git status 			# gut lesbare Status-Anzeige
+
+		pre: code(data-trim)
+			| git log [--graph]		# Commit-History
+
+		pre: code(data-trim)
+			| git diff	 			# Änderungsliste
 
 	section
 		h4 nimms weg!
 		h2 cp, mv, rm, .gitignore, reset
 
-	section
 		pre: code(data-trim)
-			| git init
-			| derp
-		pre(data-trim): code
-			| git add
-			| derp
+			| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
 
+		pre: code(data-trim)
+			| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
+
+	section
+		h2 Cheat Sheet
+
+		pre: code(data-trim)
+			| git config --global user.name "icke"
+
+		pre: code(data-trim)
+			| git config --global user.email icke@kiez.de
+
+		pre: code(data-trim)
+			| git init 				# erstellt ein neues Repo
+
+		pre: code(data-trim)
+			| git add 				# working directory → staging area
+
+		pre: code(data-trim)
+			| git commit [--all] [--amend] [-m 'Nachricht']		# staging area → repo
+
+		pre: code(data-trim)
+			| git status 			# gut lesbare Status-Anzeige
+
+		pre: code(data-trim)
+			| git log [--graph]		# Commit-History
+
+		pre: code(data-trim)
+			| git diff	 			# Änderungsliste
+
+		pre: code(data-trim)
+			| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
+
+		pre: code(data-trim)
+			| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
 
 section
 	section
@@ -81,19 +146,26 @@ section
 		h4 um sich dran aufzuhängen
 
 	section
-		h2 Wasn das?
+		h2 Demo
 
 	section
-		h4 anfangen
-		h2 checkout
-
-	section
-		h4 arbeiten
-		h2 merge
-
-	section
-		h4 übersichtlich machen
-		h2 tag
+		h2 Cheat Sheet
+		pre: code(data-trim)
+			| git branch	 			# Liste der Branches
+		pre: code(data-trim)
+			| git branch <name>	 			# Erstelle Branch <name>
+		pre: code(data-trim)
+			| git checkout <name>	 			# Wechsle zu Branch <name>
+		pre: code(data-trim)
+			| git checkout -b <name>	 			# Erstelle und wechsle zu Branch <name>
+		pre: code(data-trim)
+			| git branch -d <name>	 			# Lösche Branch <name>
+		pre: code(data-trim)
+			| git merge <name>	 			# Merged Branch <name> in den aktuellen Branch
+		pre: code(data-trim)
+			| git tag <name>	 			# Erstellt einen Tag
+		pre: code(data-trim)
+			| git tag -a <name> -m 'Nachricht'	 			# Erstellt einen kommentierten Tag
 
 section
 	section
@@ -101,23 +173,39 @@ section
 		h4 … andere arbeiten lassen
 
 	section
-		h2 Wasn das?
-
-	section
-		h4 anfangen
-		h2 clone, remote add
-
-	section
-		h4 arbeiten
-		h2 push
-
-	section
-		h4 arbeiten lassen
-		h2 pull
+		h2 Demo
 
 	section
 		h4 Bonus-Feature
 		h2 stash
+		// rash: bild von bisherigen areas + stash
+
+		pre: code(data-trim)
+			| git stash	 			# Aktuelle Änderungen werden zwischengelagert
+
+		pre: code(data-trim)
+			| git stash pop	 			# gespeicherte Änderungen wieder einspielen
+
+	section
+		h2 Cheat Sheet
+
+		pre: code(data-trim)
+			| git clone	<adresse> [<name>] 			# kopiert Repo von <adresse> 
+
+		pre: code(data-trim)
+			| git remote add origin <adresse>	 			# fügt Remote zu bestehendem Repo hinzu
+
+		pre: code(data-trim)
+			| git pull [--rebase]	 			# holt Änderungen vom Remote [ohne Merge] 
+
+		pre: code(data-trim)
+			| git push	 			# schiebt Änderungen zum Remote
+
+		pre: code(data-trim)
+			| git stash	 			# Aktuelle Änderungen werden zwischengelagert
+
+		pre: code(data-trim)
+			| git stash pop	 			# gespeicherte Änderungen wieder einspielen
 
 section
 	section
