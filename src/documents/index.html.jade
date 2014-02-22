@@ -15,14 +15,17 @@ section
 section
 	section
 		h2 Was ist ein
-		h1 Version Control System
+		h1 Version
+			br
+			| Control
+			br
+			| System
 	
 	section
 		h2 Features
-		ul
-			li Savepoints
-			li Co-Op 					
-			li Freies Experimentieren
+		h4 Savepoints
+		h4 Co-Op 					
+		h4 Freies Experimentieren
 
 	section
 		h1  zentral 
@@ -44,100 +47,108 @@ section
 
 	section
 		h2 Setup und Konfiguration
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git config --global user.name "icke"
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git config --global user.email icke@kiez.de
 
 	section
 		h2 git-Sektionen
-		// rash: repo + working directory
+		.stage.working
+			h5 working directory
+		.stage.repo
+			h5 repository
 
 	section
 		h4 anfangen
 		h2 init
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git init 				# erstellt ein neues Repo
 	
 
 	section
 		h4 arbeiten
 		h2 staging area
-		// rash: repo + working directory + staging dazwischen
+		.stage.working
+			h5 working directory
+		.stage.index.fragment.roll-in
+			h5 staging area
+		.stage.repo
+			h5 repository
 
 	section
 		h4 arbeiten
 		h2 add, commit
-		pre: code(data-trim)
-			| git add 				# working directory → staging area
-		// rash: kommentare gleichweit einrücken, farben sind random
+		pre: code.bash(data-trim)
+			| git add				# working directory → staging area
 		// rash: größerer Abstand zwischen code-zeilen?
 	
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git commit [--all] [-m 'Nachricht']			# staging area → repo
-		// rash: commit early, commit often
+		blockquote(style="margin-top: 4em")
+			| commit early, commit often
 
 	section
 		h4 arbeiten
 		h2 amend
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git commit --amend	# ergänzt den letzten Commit
 
 	section
 		h4 angucken
 		h2 status, log, diff
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git status 			# gut lesbare Status-Anzeige
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git log [--graph]		# Commit-History
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git diff	 			# Änderungsliste
 
 	section
 		h4 nimms weg!
 		h2 cp, mv, rm, .gitignore, reset
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
 
 	section
 		h2 Cheat Sheet
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git config --global user.name "icke"
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git config --global user.email icke@kiez.de
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git init 				# erstellt ein neues Repo
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git add 				# working directory → staging area
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git commit [--all] [--amend] [-m 'Nachricht']		# staging area → repo
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git status 			# gut lesbare Status-Anzeige
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git log [--graph]		# Commit-History
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git diff	 			# Änderungsliste
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
 
 section
@@ -148,24 +159,24 @@ section
 	section
 		h2 Demo
 
-	section
+	section.cheat-sheet-branching
 		h2 Cheat Sheet
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git branch	 			# Liste der Branches
-		pre: code(data-trim)
-			| git branch <name>	 			# Erstelle Branch <name>
-		pre: code(data-trim)
-			| git checkout <name>	 			# Wechsle zu Branch <name>
-		pre: code(data-trim)
-			| git checkout -b <name>	 			# Erstelle und wechsle zu Branch <name>
-		pre: code(data-trim)
-			| git branch -d <name>	 			# Lösche Branch <name>
-		pre: code(data-trim)
-			| git merge <name>	 			# Merged Branch <name> in den aktuellen Branch
-		pre: code(data-trim)
-			| git tag <name>	 			# Erstellt einen Tag
-		pre: code(data-trim)
-			| git tag -a <name> -m 'Nachricht'	 			# Erstellt einen kommentierten Tag
+		pre: code.bash(data-trim)
+			| git branch &lt;name&gt;	 			# Erstelle Branch &lt;name&gt;
+		pre: code.bash(data-trim)
+			| git checkout &lt;name&gt;	 			# Wechsle zu Branch &lt;name&gt;
+		pre: code.bash(data-trim)
+			| git checkout -b &lt;name&gt;	 			# Erstelle und wechsle zu Branch &lt;name&gt;
+		pre: code.bash(data-trim)
+			| git branch -d &lt;name&gt;	 			# Lösche Branch &lt;name&gt;
+		pre: code.bash(data-trim)
+			| git merge &lt;name&gt;	 			# Merged Branch &lt;name&gt; in den aktuellen Branch
+		pre: code.bash(data-trim)
+			| git tag &lt;name&gt;	 			# Erstellt einen Tag
+		pre: code.bash(data-trim)
+			| git tag -a &lt;name&gt; -m 'Nachricht'	 			# Erstellt einen kommentierten Tag
 
 section
 	section
@@ -175,36 +186,43 @@ section
 	section
 		h2 Demo
 
-	section
+	section.stash-section
 		h4 Bonus-Feature
 		h2 stash
-		// rash: bild von bisherigen areas + stash
+		.stage.stash.fragment.roll-in
+			h5 stash
+		.stage.working
+			h5 working directory
+		.stage.index
+			h5 staging area
+		.stage.repo
+			h5 repository
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git stash	 			# Aktuelle Änderungen werden zwischengelagert
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git stash pop	 			# gespeicherte Änderungen wieder einspielen
 
-	section
+	section.cheat-sheet-remote
 		h2 Cheat Sheet
 
-		pre: code(data-trim)
-			| git clone	<adresse> [<name>] 			# kopiert Repo von <adresse> 
+		pre: code.bash(data-trim)
+			| git clone &lt;adresse&gt; [&lt;name&gt;] 			# kopiert Repo von &lt;adresse&gt; 
 
-		pre: code(data-trim)
-			| git remote add origin <adresse>	 			# fügt Remote zu bestehendem Repo hinzu
+		pre: code.bash(data-trim)
+			| git remote add origin &lt;adresse&gt;	 			# fügt Remote zu bestehendem Repo hinzu
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git pull [--rebase]	 			# holt Änderungen vom Remote [ohne Merge] 
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git push	 			# schiebt Änderungen zum Remote
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git stash	 			# Aktuelle Änderungen werden zwischengelagert
 
-		pre: code(data-trim)
+		pre: code.bash(data-trim)
 			| git stash pop	 			# gespeicherte Änderungen wieder einspielen
 
 section
