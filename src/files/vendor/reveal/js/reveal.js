@@ -849,7 +849,7 @@ var Reveal = (function(){
 	 */
 	function isPrintingPDF() {
 
-		return ( /print-pdf/gi ).test( window.location.search );
+		return ( /print-pdf|print-paper/gi ).test( window.location.search );
 
 	}
 

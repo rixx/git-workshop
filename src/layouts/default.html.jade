@@ -21,7 +21,7 @@
 
 //- reveal
 - styles.add(['/vendor/reveal/css/reveal.min.css', '/vendor/reveal/css/theme/default.css', '/vendor/reveal/lib/css/zenburn.css'])
-- scripts.add(['/vendor/reveal/lib/js/head.min.js', '/vendor/reveal/js/reveal.min.js'],{defer:false,async:false})
+- scripts.add(['/vendor/reveal/lib/js/head.min.js', '/vendor/reveal/js/reveal.js'],{defer:false,async:false})
 
 !!! 5
 html(lang='en')
@@ -40,7 +40,7 @@ html(lang='en')
 		// If the query includes 'print-pdf', use the PDF print sheet
 		!= styles.toHTML()
 		script
-			document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="/vendor/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 	body
 		.reveal
 			.slides
