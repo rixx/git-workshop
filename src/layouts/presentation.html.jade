@@ -1,0 +1,72 @@
+- var scripts = getBlock('scripts')
+- var styles = getBlock('styles')
+
+//- //- Prettify Syntax Highlighting
+//- - scripts.add(["/vendor/prettify.js"])
+//- - styles.add(["/vendor/prettify.css"])
+
+//- //- jQuery
+//- - scripts.add(["/vendor/jquery/jquery.js"])
+
+//- //- Bootstrap
+//- - scripts.add(["/vendor/components-bootstrap/js/bootstrap.js"])
+//- - styles.add(["/vendor/components-bootstrap/css/bootstrap.css"])
+
+//- //- Other Scripts
+//- - scripts.add(["/vendor/log.js","/vendor/modernizr.js"])
+
+//- //- User
+- styles.add(["/styles/presentation.css"])
+//- - scripts.add(["/scripts/script.js"])
+
+//- reveal
+- styles.add(['/vendor/reveal/css/reveal.min.css', '/vendor/reveal/css/theme/default.css', '/vendor/reveal/lib/css/zenburn.css'])
+- scripts.add(['/vendor/reveal/lib/js/head.min.js', '/vendor/reveal/js/reveal.js'],{defer:false,async:false})
+
+!!! 5
+html(lang='en')
+	head
+
+		meta(charset='utf-8')
+		title Git Intro
+		meta(name='description', content='A framework for easily creating beautiful presentations using HTML')
+		meta(name='author', content='rixx')
+		meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		!= getBlock('meta').toHTML()
+		//- link#theme(rel='stylesheet', href='reveal/css/theme/default.css')
+		// For syntax highlighting
+		// If the query includes 'print-pdf', use the PDF print sheet
+		!= styles.toHTML()
+		script
+			document.write( '<link rel="stylesheet" href="/vendor/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	body
+		.reveal
+			.slides
+				!= content
+
+		!= scripts.toHTML()
+		script
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+			{ src: '/vendor/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: '/vendor/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: '/vendor/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: '/vendor/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();  } },
+			{ src: '/vendor/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: '/vendor/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+			});	
