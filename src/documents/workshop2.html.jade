@@ -17,14 +17,14 @@ section
 		h4 Mach es weg!
 		h2 Reset
 
-	section	
+	section
 		h4 Das hätte in einen Feature-Branch gehört
 		pre: code.bash(data-trim)
 			| git branch feature/blakeks
 			| git reset --hard HEAD~3
 			| git checkout feature/blakeks
 
-	section	
+	section
 		h4 Das hätte in einen Commit gehört
 		pre: code.bash(data-trim)
 			| git reset --soft HEAD~5
@@ -33,14 +33,14 @@ section
 	section
 		h4 Cheat Sheet
 		pre: code.bash(data-trim)
-			| git reset <file>						# undo git add <file>
+			| git reset &lt;file&gt;					# undo git add &lt;file&gt;
 
 		pre: code.bash(data-trim)
-			| git reset --hard <commit>				# Setzt alles auf Commit-Stand
+			| git reset --hard &lt;commit&gt;				# Setzt alles auf Commit-Stand
 			| git reset --hard HEAD 				# Schnell zurück zum letzten Commit!
-			| git checkout -- <file>				# Nur eine Datei zurücksetzen
+			| git checkout -- &lt;file&gt;				# Nur eine Datei zurücksetzen
 		pre: code.bash(data-trim)
-			| git reset --soft <commit>				# Ändert nur das Repo
+			| git reset --soft &lt;commit&gt;				# Ändert nur das Repo
 			|										# lässt das Working Dir in Ruhe
 
 section
@@ -49,10 +49,10 @@ section
 		h2 Cherry-Pick und Revert
 
 		pre: code.bash(data-trim)
-			| git cherry-pick [-e] <commit>				# Den Commit bitte noch mal!
+			| git cherry-pick [-e] &lt;commit&gt;				# Den Commit bitte noch mal!
 
 		pre: code.bash(data-trim)
-			| git revert <commit>				# Den Commit bitte rückgängig!
+			| git revert &lt;commit&gt;				# Den Commit bitte rückgängig!
 
 section
 	section
@@ -60,7 +60,7 @@ section
 		h2 git rebase
 	
 		pre: code.bash(data-trim)
-			| git rebase <branch>
+			| git rebase &lt;branch&gt;
 			| git pull --rebase
 
 	section
@@ -68,7 +68,7 @@ section
 		h2 interactive rebase: squashen und mehr
 
 		pre: code.bash(data-trim)
-			| git rebase --interactive <commit_nachdems_losgeht>
+			| git rebase --interactive &lt;commit_nachdems_losgeht&gt;
 
 section
 	section
@@ -79,9 +79,8 @@ section
 		h4 Whooops, da waren Passwörter in der Datei
 
 		pre: code.bash(data-trim)
-			| git filter-branch --index-filter 'git rm --cached \
-			|   --ignore-unmatched conf/my.conf' --prune-empty \
-			|   --tag-name-filter cat -- --all
+			| git filter-branch --index-filter 'git rm --cached --ignore-unmatched conf/my.conf' \
+			|     --prune-empty --tag-name-filter cat -- --all
 	
 	section
 		h4 Sonstige Filter
@@ -100,8 +99,8 @@ section
 
 		pre: code.bash(data-trim)
 			| git bisect start
-			| git bisect good <commit>
-			| git bisect bad <commit>
+			| git bisect good &lt;commit&gt;
+			| git bisect bad &lt;commit&gt;
 			| git bisect skip
 			| git bisect run
 

@@ -23,7 +23,7 @@
 - styles.add(['/vendor/reveal/css/reveal.min.css', '/vendor/reveal/css/theme/default.css', '/vendor/reveal/lib/css/zenburn.css'])
 - scripts.add(['/vendor/reveal/lib/js/head.min.js', '/vendor/reveal/js/reveal.js'],{defer:false,async:false})
 
-!!! 5
+doctype html
 html(lang='en')
 	head
 
@@ -39,15 +39,15 @@ html(lang='en')
 		// For syntax highlighting
 		// If the query includes 'print-pdf', use the PDF print sheet
 		!= styles.toHTML()
-		script
-			document.write( '<link rel="stylesheet" href="/vendor/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		//- script
+		//- 	document.write( '<link rel="stylesheet" href="/vendor/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 	body
 		.reveal
 			.slides
 				!= content
 
 		!= scripts.toHTML()
-		script
+		script.
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
