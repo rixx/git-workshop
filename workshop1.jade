@@ -1,0 +1,234 @@
+---
+title: "rixx' Git-Workshop im shack"
+_content: false
+---
+
+extends layouts/presentation
+
+// Idee:
+// alles in Tutorial-/Gaming-Style: isn Tutorial, hat Erklärungen, single-player, mehr Level (branches), multi-player (mit u. ohne FF)
+// das geht dann auch nahtlos in den geplanten git war über
+
+block content
+	section
+		h1 Git Intro
+		h4 für Einsteiger
+
+
+	section
+		section
+			h2 Was ist ein
+			h1 Version
+				br
+				| Control
+				br
+				| System
+		
+		section
+			h2 Features
+			h4 Savepoints
+			h4 Co-Op 					
+			h4 Freies Experimentieren
+
+		section
+			h1  zentral 
+				small vs
+				|  Verteilt
+
+		section
+			h3 Zentral
+			img.no-border(src='/img/centralized.svg')
+
+		section
+			h3 Verteilt
+			img.no-border(src='/img/decentralized.svg')
+
+	section
+		section
+			h1 Basics
+			h4 git: das Tutorial
+
+		section
+			h2 Setup und Konfiguration
+			pre: code.bash(data-trim)
+				| git config --global user.name "icke"
+
+			pre: code.bash(data-trim)
+				| git config --global user.email icke@kiez.de
+
+		section
+			h2 git-Sektionen
+			.stage.working
+				h5 working directory
+			.stage.repo
+				h5 repository
+
+		section
+			h4 anfangen
+			h2 init
+			pre: code.bash(data-trim)
+				| git init 				# erstellt ein neues Repo
+		
+
+		section
+			h4 arbeiten
+			h2 staging area
+			.stage.working
+				h5 working directory
+			.stage.index.fragment.roll-in
+				h5 staging area
+			.stage.repo
+				h5 repository
+
+		section
+			h4 arbeiten
+			h2 add, commit
+			pre: code.bash(data-trim)
+				| git add				# working directory → staging area
+			// rash: größerer Abstand zwischen code-zeilen?
+		
+			pre: code.bash(data-trim)
+				| git commit [--all] [-m 'Nachricht']			# staging area → repo
+			blockquote(style="margin-top: 4em")
+				| commit early, commit often
+
+		section
+			h4 arbeiten
+			h2 amend
+
+			pre: code.bash(data-trim)
+				| git commit --amend	# ergänzt den letzten Commit
+
+		section
+			h4 angucken
+			h2 status, log, diff
+			pre: code.bash(data-trim)
+				| git status 			# gut lesbare Status-Anzeige
+
+			pre: code.bash(data-trim)
+				| git log [--graph]		# Commit-History
+
+			pre: code.bash(data-trim)
+				| git diff	 			# Änderungsliste
+
+		section
+			h4 nimms weg!
+			h2 cp, mv, rm, .gitignore, reset
+
+			pre: code.bash(data-trim)
+				| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
+
+			pre: code.bash(data-trim)
+				| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
+
+		section
+			h2 Cheat Sheet
+
+			pre: code.bash(data-trim)
+				| git config --global user.name "icke"
+
+			pre: code.bash(data-trim)
+				| git config --global user.email icke@kiez.de
+
+			pre: code.bash(data-trim)
+				| git init 				# erstellt ein neues Repo
+
+			pre: code.bash(data-trim)
+				| git add 				# working directory → staging area
+
+			pre: code.bash(data-trim)
+				| git commit [--all] [--amend] [-m 'Nachricht']		# staging area → repo
+
+			pre: code.bash(data-trim)
+				| git status 			# gut lesbare Status-Anzeige
+
+			pre: code.bash(data-trim)
+				| git log [--graph]		# Commit-History
+
+			pre: code.bash(data-trim)
+				| git diff	 			# Änderungsliste
+
+			pre: code.bash(data-trim)
+				| git rm [--cached]	 	# Löscht Dateien [nur im Repo]
+
+			pre: code.bash(data-trim)
+				| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
+
+	section
+		section
+			h1 Branches
+			h4 um sich dran aufzuhängen
+
+		section
+			h2 Demo
+
+		section.cheat-sheet-branching
+			h2 Cheat Sheet
+			pre: code.bash(data-trim)
+				| git branch	 			# Liste der Branches
+			pre: code.bash(data-trim)
+				| git branch &lt;name&gt;	 			# Erstelle Branch &lt;name&gt;
+			pre: code.bash(data-trim)
+				| git checkout &lt;name&gt;	 			# Wechsle zu Branch &lt;name&gt;
+			pre: code.bash(data-trim)
+				| git checkout -b &lt;name&gt;	 			# Erstelle und wechsle zu Branch &lt;name&gt;
+			pre: code.bash(data-trim)
+				| git branch -d &lt;name&gt;	 			# Lösche Branch &lt;name&gt;
+			pre: code.bash(data-trim)
+				| git merge &lt;name&gt;	 			# Merged Branch &lt;name&gt; in den aktuellen Branch
+			pre: code.bash(data-trim)
+				| git tag &lt;name&gt;	 			# Erstellt einen Tag
+			pre: code.bash(data-trim)
+				| git tag -a &lt;name&gt; -m 'Nachricht'	 			# Erstellt einen kommentierten Tag
+
+	section
+		section
+			h1 Remotes
+			h4 … andere arbeiten lassen
+
+		section
+			h2 Demo
+
+		section.stash-section
+			h4 Bonus-Feature
+			h2 stash
+			.stage.stash.fragment.roll-in
+				h5 stash
+			.stage.working
+				h5 working directory
+			.stage.index
+				h5 staging area
+			.stage.repo
+				h5 repository
+
+			pre: code.bash(data-trim)
+				| git stash	 			# Aktuelle Änderungen werden zwischengelagert
+
+			pre: code.bash(data-trim)
+				| git stash pop	 			# gespeicherte Änderungen wieder einspielen
+
+		section.cheat-sheet-remote
+			h2 Cheat Sheet
+
+			pre: code.bash(data-trim)
+				| git clone &lt;adresse&gt; [&lt;name&gt;] 			# kopiert Repo von &lt;adresse&gt; 
+
+			pre: code.bash(data-trim)
+				| git remote add origin &lt;adresse&gt;	 			# fügt Remote zu bestehendem Repo hinzu
+
+			pre: code.bash(data-trim)
+				| git pull [--rebase]	 			# holt Änderungen vom Remote [ohne Merge] 
+
+			pre: code.bash(data-trim)
+				| git push	 			# schiebt Änderungen zum Remote
+
+			pre: code.bash(data-trim)
+				| git stash	 			# Aktuelle Änderungen werden zwischengelagert
+
+			pre: code.bash(data-trim)
+				| git stash pop	 			# gespeicherte Änderungen wieder einspielen
+
+	section
+		section
+			h4 pssst, bonus-material
+
