@@ -13,7 +13,7 @@
     "dynamic-content": "0.0.3",
     "jade": "1.x",
     "marked": "0.3.x",
-    "roots": "^3.0.0-rc.9",
+    "roots": "~3",
     "rupture": "0.4.x",
     "stylus": "0.48.x"
   },
