@@ -12,8 +12,8 @@ html(lang='en')
 		//- link#theme(rel='stylesheet', href='reveal/css/theme/default.css')
 		// For syntax highlighting
 		// If the query includes 'print-pdf', use the PDF print sheet
-		link(href='/vendor/reveal/css/reveal.min.css', rel='stylesheet')
-		link(href='/vendor/reveal/css/theme/default.css', rel='stylesheet')
+		link(href='/vendor/reveal/css/reveal.css', rel='stylesheet')
+		link(href='/vendor/reveal/css/theme/white.css', rel='stylesheet', id='theme')
 		link(href='/vendor/reveal/lib/css/zenburn.css', rel='stylesheet')
 		link(href='/styles/presentation.css', rel='stylesheet')
 	body
@@ -33,8 +33,7 @@ html(lang='en')
 			progress: true,
 			history: true,
 			center: true,
-			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+			transition: 'slide',
 			// Parallax scrolling
 			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 			// parallaxBackgroundSize: '2100px 900px',
