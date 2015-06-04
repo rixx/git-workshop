@@ -6,7 +6,7 @@ module.exports =
 	debug: true
 	extensions: [dynamic_content()]
 	output: 'public'
-	ignores: ['README.md', '.gitignore', 'layouts/*', '**/_*']
+	ignores: ['README.md', '.gitignore', 'layouts/*', '**/_*', '**/*.sw*']
 
 	stylus:
 		use: [axis(), autoprefixer()]
