@@ -3,6 +3,9 @@
 // 	color #ccc
 // 	border-top 6px solid #099
 
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6
+	text-transform initial
+
 .progress span
 	background #099
 	background none repeat scroll 0% 0% #099
@@ -18,6 +21,12 @@ img.no-border
 	
 img.half-height
 	max-height 50vh
+	
+img.long-branch
+	max-width 200vw
+	max-height 200vh
+	position absolute
+	left -50vw
 
 .reveal pre
 	width 110% !important
@@ -54,3 +63,21 @@ pre .comment
 .reveal .stash
 	background-color #AAA
 	width 2em
+	
+.list
+	text-align left
+	
+h5.whatthecommit
+	font-style italic
+	display none
+	
+	&:before, &:after
+		font-size 1.5em
+		color gray
+		
+
+	&:before
+		content '» '
+		
+	&:after
+		content ' «'

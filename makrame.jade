@@ -6,6 +6,8 @@ _content: false
 extends layouts/presentation
 
 block content
+	h5.whatthecommit
+
 	section
 		img.no-border.half-height(src='/img/failcat.png')
 		h1 Commit Makrame
@@ -14,12 +16,14 @@ block content
 	section
 		section
 			h1 Grundsätzlich
-			h3 Scope beachten
-			h3 Gute, logische Geschichte bauen
-			h3 Finger weg von öffentlicher Geschichte
+			.list
+				h3 1. Scope beachten
+				h3 2. Gute, logische Geschichte bauen
+				h3 3. Finger weg von öffentlicher Geschichte
 
 	section
 		section
+			h1 1.
 			h2 Was ist der
 			h1 Scope?
 		
@@ -30,33 +34,59 @@ block content
 			h2 Binaries
 
 		section
-			h2 Assets und co
+			h2 Binaries
+			img.no-border.half-height(src='/img/git_diff_binaries.png')
 
+		section
+			h2 Assets und co
+		
 		section
 			h2 Zu viele Dateien
 
 	section
 		section
+			h1 2.
 			h3 Logische
 			h1 Commits
 			h3 Logische
 			h1 History
 		
-		section
-			h4.whatthecommit
+		section.whatthecommit
 			h2 Commit-Messages
 
-		section
+		section.whatthecommit
+			h2 Commit-Messages
+			img.no-border.half-height(src='/img/xkcd.png')
+
+		section.whatthecommit
 			h2 Riesige Commits
 
-		section
+		section.whatthecommit
 			h2 Winzige Commits
 
 		section
 			h2 Kein Feature-Branch
 
 		section
+			h2 Kein Feature-Branch
+			img.no-border(src='/img/many-branches-1.png')
+
+		section
+			h2 Kein Feature-Branch
+			img.no-border(src='/img/many-branches-2.png')
+
+		section
+			h2 Kein Feature-Branch
+			img.no-border.half-height(src='/img/no-rebase-2.png')
+			br
+			img.no-border.half-height(src='/img/rebase.png')
+
+		section
 			h2 Langlebige Feature-Branches
+		
+		section
+			h2 Langlebige Feature-Branches
+			img.no-border.long-branch(src='/img/looong-branches.png')
 
 		section
 			h2 Branches pro Dev
@@ -64,9 +94,14 @@ block content
 		section
 			h2 Octomerges
 
+		section
+			h2 Octomerges
+			img.no-border(src='/img/octomerge.png')
+
 	section
 		section
-			h1 Geschichtsfälschung
+			h1 3.
+			h1 Geschichts&shy;fälschung
 		
 		section
 			h2 Der Commit war falsch
@@ -76,11 +111,12 @@ block content
 
 		section
 			h2 Und plötzlich war der Branch weg
+			img.no-border.half-height(src='/img/octocat_sad.gif')
 
 	section
 		section
 			h1 Deshalb
-			h3 Use Case beachten
-			h3 Gute, logische Geschichte bauen
-			h3 Finger weg von öffentlicher Geschichte
-		
+			.list
+				h3 1. Use Case beachten
+				h3 2. Gute, logische Geschichte bauen
+				h3 3. Finger weg von öffentlicher Geschichte
