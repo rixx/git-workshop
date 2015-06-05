@@ -74,11 +74,11 @@ block content
 			h4 arbeiten
 			h2 add, commit
 			pre: code.bash(data-trim)
-				| git add				# working directory → staging area
+				| git add					# working directory → staging area
 			// rash: größerer Abstand zwischen code-zeilen?
 		
 			pre: code.bash(data-trim)
-				| git commit [--all] [-m 'Nachricht']			# staging area → repo
+				| git commit [--all] [-m 'Nachricht']	# staging area → repo
 			blockquote(style="margin-top: 4em")
 				| commit early, commit often
 
@@ -106,7 +106,7 @@ block content
 				| git commit [-m 'Nachricht']		# staging area → repo
 
 			pre: code.bash(data-trim)
-				| git status 			# gut lesbare Status-Anzeige
+				| git status 				# gut lesbare Status-Anzeige
 
 
 	section
@@ -120,17 +120,17 @@ block content
 		section.cheat-sheet-branching
 			h2 Cheat Sheet
 			pre: code.bash(data-trim)
-				| git branch	 			# Liste der Branches
+				| git branch	 		# Liste der Branches
 			pre: code.bash(data-trim)
-				| git branch &lt;name&gt;	 			# Erstelle Branch &lt;name&gt;
+				| git branch &lt;name&gt;	 	# Erstelle Branch &lt;name&gt;
 			pre: code.bash(data-trim)
-				| git checkout &lt;name&gt;	 			# Wechsle zu Branch &lt;name&gt;
+				| git checkout &lt;name&gt;	 	# Wechsle zu Branch &lt;name&gt;
 			pre: code.bash(data-trim)
-				| git checkout -b &lt;name&gt;	 			# Erstelle und wechsle zu Branch &lt;name&gt;
+				| git checkout -b &lt;name&gt;		# Erstelle und wechsle zu Branch &lt;name&gt;
 			pre: code.bash(data-trim)
-				| git merge &lt;name&gt;	 			# Merged Branch &lt;name&gt; in den aktuellen Branch
+				| git merge &lt;name&gt;		# Merged Branch &lt;name&gt; in den aktuellen Branch
 			pre: code.bash(data-trim)
-				| git tag &lt;name&gt;	 			# Erstellt einen Tag
+				| git tag &lt;name&gt;	 		# Erstellt einen Tag
 
 	section
 		section
@@ -144,13 +144,13 @@ block content
 			h2 Cheat Sheet
 
 			pre: code.bash(data-trim)
-				| git clone &lt;adresse&gt; [&lt;name&gt;] 			# kopiert Repo von &lt;adresse&gt; 
+				| git clone &lt;adresse&gt; [&lt;name&gt;] 		# kopiert Repo von &lt;adresse&gt; 
 
 			pre: code.bash(data-trim)
-				| git remote add origin &lt;adresse&gt;	 			# fügt Remote zu bestehendem Repo hinzu
+				| git remote add origin &lt;adresse&gt;	 	# fügt Remote zu bestehendem Repo hinzu
 
 			pre: code.bash(data-trim)
-				| git pull [--rebase]	 			# holt Änderungen vom Remote [ohne Merge] 
+				| git pull [--rebase]	 		# holt Änderungen vom Remote [ohne Merge] 
 
 			pre: code.bash(data-trim)
 				| git push	 			# schiebt Änderungen zum Remote
