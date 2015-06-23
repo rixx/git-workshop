@@ -232,3 +232,42 @@ block content
 		section
 			h4 pssst, bonus-material
 
+		section
+			h2 Cheat Sheet: wichtigstes insgesamt
+
+			pre: code.bash(data-trim)
+				| git init 				# erstellt ein neues Repo
+
+			pre: code.bash(data-trim)
+				| git add 				# working directory → staging area
+
+			pre: code.bash(data-trim)
+				| git commit [--all] [--amend] [-m 'Nachricht']		# staging area → repo
+
+			pre: code.bash(data-trim)
+				| git status
+
+			pre: code.bash(data-trim)
+				| git clone <remote>
+
+			pre: code.bash(data-trim)
+				| git pull [--rebase]
+
+			pre: code.bash(data-trim)
+				| git push [-u origin master]
+
+			pre: code.bash(data-trim)
+				| git branch, git tag		# Liste von Branches/Tags
+
+			pre: code.bash(data-trim)
+				| git merge <branch>				# anderen Branch zu diesem zusammenfügen
+
+			pre: code.bash(data-trim)
+				| git diff	 			# Änderungsliste
+
+			pre: code.bash(data-trim)
+				| git stash	pop 			# Änderungen zwischenlagern [wiederherstellen]
+
+			pre: code.bash(data-trim)
+				| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
+
