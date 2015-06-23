@@ -236,38 +236,32 @@ block content
 			h2 Cheat Sheet: wichtigstes insgesamt
 
 			pre: code.bash(data-trim)
-				| git init 				# erstellt ein neues Repo
+				| git init, git clone    		# erstellt ein neues Repo
 
 			pre: code.bash(data-trim)
-				| git add 				# working directory → staging area
+				| git add 	    		# working directory → staging area
 
 			pre: code.bash(data-trim)
-				| git commit [--all] [--amend] [-m 'Nachricht']		# staging area → repo
+				| git commit [--all] [--amend] [-m 'Nachricht']	# staging area → repo
 
 			pre: code.bash(data-trim)
-				| git status
+				| git status, git diff		# Statusanzeigen
 
 			pre: code.bash(data-trim)
-				| git clone <remote>
+				| git pull [--rebase]		# Pull [mit weniger Konflikt]
 
 			pre: code.bash(data-trim)
-				| git pull [--rebase]
-
-			pre: code.bash(data-trim)
-				| git push [-u origin master]
+				| git push [-u origin master]	# Push [set default]
 
 			pre: code.bash(data-trim)
 				| git branch, git tag		# Liste von Branches/Tags
 
 			pre: code.bash(data-trim)
-				| git merge <branch>				# anderen Branch zu diesem zusammenfügen
+				| git merge [branch]		# anderen Branch zu diesem mergen
 
 			pre: code.bash(data-trim)
-				| git diff	 			# Änderungsliste
+				| git stash [pop] 		# Änderungen zwischenlagern
 
 			pre: code.bash(data-trim)
-				| git stash	pop 			# Änderungen zwischenlagern [wiederherstellen]
-
-			pre: code.bash(data-trim)
-				| git reset --hard HEAD	# Zurücksetzen auf den letzten Commit
+				| git reset --hard HEAD		# Zurücksetzen auf den letzten Commit
 
