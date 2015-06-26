@@ -1,0 +1,161 @@
+---
+title: "rixx' GitHub Workshop at GPN15"
+_content: false
+---
+
+extends layouts/presentation
+
+block content
+	section
+		h1 Git + GitHub
+		h4 for Beginners
+
+
+	section
+		section
+			h2 What is a
+			h1 Version
+				br
+				| Control
+				br
+				| System
+		
+		section
+			h1  centralized
+			small vs
+			h1 distributed
+
+		section
+			h3 Centralized
+			img.no-border(src='/img/centralized.svg')
+
+		section
+			h3 Distributed
+			img.no-border(src='/img/decentralized.svg')
+
+
+	section
+		section
+			h1 Basics
+			h4 git: das Tutorial
+
+		section
+			h2 Setup and Configuration
+			pre: code.bash(data-trim)
+				| git config --global user.name "me myself"
+
+			pre: code.bash(data-trim)
+				| git config --global user.email me@myself.com
+
+		section
+			h2 git-Areas
+			.stage.working
+				h5 working directory
+			.stage.repo
+				h5 repository
+
+		section
+			h4 Starting Out
+			h2 init
+			pre: code.bash(data-trim)
+				| git init 				# starts a new repositroy
+		
+
+		section
+			h4 Working
+			h2 Staging Area
+			.stage.working
+				h5 working directory
+			.stage.index.fragment.roll-in
+				h5 staging area
+			.stage.repo
+				h5 repository
+
+		section
+			h4 Working
+			h2 add, commit
+			pre: code.bash(data-trim)
+				| git add					# working directory → staging area
+		
+			pre: code.bash(data-trim)
+				| git commit [--all] [-m 'Message']	# staging area → repo
+			blockquote(style="margin-top: 4em")
+				| commit early, commit often
+
+		section
+			h4 Having a Look
+			pre: code.bash(data-trim)
+				| git status 			# readable status output
+
+		section
+			h2 Cheat Sheet
+
+			pre: code.bash(data-trim)
+				| git config --global user.name "my myself"
+
+			pre: code.bash(data-trim)
+				| git config --global user.email me@myself.com
+
+			pre: code.bash(data-trim)
+				| git init 				# starts a new repositroy
+
+			pre: code.bash(data-trim)
+				| git add 				# working directory → staging area
+
+			pre: code.bash(data-trim)
+				| git commit [-m 'Nachricht']		# staging area → repo
+
+			pre: code.bash(data-trim)
+				| git status 				# readable status output
+
+
+	section
+		section
+			h1 Branches
+			h4 to go hang yourself
+
+		section
+			h2 Demo
+
+		section.cheat-sheet-branching
+			h2 Cheat Sheet
+			pre: code.bash(data-trim)
+				| git branch	 			# List of branches
+			pre: code.bash(data-trim)
+				| git branch &lt;name&gt;	 		# Create Branch
+			pre: code.bash(data-trim)
+				| git checkout &lt;name&gt;	 		# Switch to Branch
+			pre: code.bash(data-trim)
+				| git checkout -b &lt;name&gt;	 		# Create and switch to Branch
+			pre: code.bash(data-trim)
+				| git merge &lt;name&gt;	 		# Merge Branch &lt;name&gt; into current Branch
+			pre: code.bash(data-trim)
+				| git tag &lt;name&gt;	 			# Create a Tag
+
+	section
+		section
+			h1 Remotes
+			h4 Letting others do the work
+
+		section
+			h2 Demo
+
+		section.cheat-sheet-remote
+			h2 Cheat Sheet
+
+			pre: code.bash(data-trim)
+				| git clone &lt;adresse&gt; [&lt;name&gt;] 		# copy from remote repository
+
+			pre: code.bash(data-trim)
+				| git remote add origin &lt;adresse&gt;	 	# add a remote to existing repository
+
+			pre: code.bash(data-trim)
+				| git pull [--rebase]	 		# pulls changes from remote [avoid merges]
+
+			pre: code.bash(data-trim)
+				| git push	 			# push changes to remote
+
+	section
+		section
+			h4 pssst, bonus-material
+

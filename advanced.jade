@@ -1,0 +1,123 @@
+---
+title: "rixx' intermediate git workshop"
+_content: false
+---
+
+extends layouts/presentation
+
+block content
+	section
+		h1 Advanced
+		h4 git Intro
+
+
+	section
+		section
+			h4 Make it go away!
+			h2 Reset
+
+		section
+			h4 All this should have been a feature branch
+			pre: code.bash(data-trim)
+				| git branch feature/foobar
+				| git reset --hard HEAD~3
+				| git checkout feature/foobar
+
+		section
+			h4 All this should have been one commit
+			pre: code.bash(data-trim)
+				| git reset --soft HEAD~5
+				| git commit --all -m 'What an elegant commit!'
+
+		section
+			h4 Cheat Sheet
+			pre: code.bash(data-trim)
+				| git reset &lt;file&gt;			# undo git add &lt;file&gt;
+
+			pre: code.bash(data-trim)
+				| git reset --hard &lt;commit&gt;		# Reset to commit state
+				| git reset --hard HEAD 			# Reset to last commit
+				| git checkout -- &lt;file&gt;			# Reset a file to last commit state
+			pre: code.bash(data-trim)
+				| git reset --soft &lt;commit&gt;		# Changes the repository
+				|					# leaves the working directory untouched
+
+	section
+		section
+			h4 Once more, without feeling!
+			h2 Cherry-Pick and Revert
+
+			pre: code.bash(data-trim)
+				| git cherry-pick [-e] &lt;commit&gt;			# Please repeat this commit!
+
+			pre: code.bash(data-trim)
+				| git revert &lt;commit&gt;				# Please undo that commit!
+
+	section
+		section
+
+			h4 I'd like what he is having, but in my branch, please
+			h2 git rebase
+			
+			//- img.no-border(src='/img/rebase.svg', height='400px')
+
+			pre: code.bash(data-trim)
+				| git rebase &lt;branch&gt;
+				| git pull --rebase
+
+		section
+			h4 I was young and needed the money: Forging History
+			h2 interactive rebase: squash and more
+
+			pre: code.bash(data-trim)
+				| git rebase --interactive &lt;last_untouched_commit&gt;
+
+	section
+		section
+			h4 MOAR MAGIC
+			h2 git filter-branch
+
+		section
+			h4 Whooops, there might have been passwords …
+
+			pre: code.bash(data-trim)
+				| git filter-branch --index-filter 'git rm --cached --ignore-unmatched conf/my.conf' \
+				|     --prune-empty --tag-name-filter cat -- --all
+		
+		section
+			h4 Other Filters
+			pre: code.bash(data-trim)
+				| --index-filter     # for git commands, fast
+				| --tree-filter      # for system commands, slower
+				| --msg-filter       # Commit-Messages
+				| --commit-filter    # Commits
+
+			See also: BFG Repo Cleaner
+
+	section
+		section
+			h4 Where is the mistake? Where is it?
+			h2 git bisect
+
+			pre: code.bash(data-trim)
+				| git bisect start
+				| git bisect good &lt;commit&gt;
+				| git bisect bad &lt;commit&gt;
+				| git bisect skip
+				| git bisect run
+
+	section
+		section
+			h4 Shhh, Bonus Features
+
+		section
+			h4 git-checkout
+
+			pre: code.bash(data-trim)
+				| git checkout HEAD^^^
+				| git checkout develop~3
+				| git checkout master@{today}
+				| git checkout release@{one.month.ago}
+				| git checkout feature/bla@{5 minutes ago}
+				| git checkout :/Version.*
+				| git checkout HEAD{/Bugfix.*}
