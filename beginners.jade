@@ -48,12 +48,20 @@ block content
 			h4 git: the Tutorial
 
 		section
+			h3 Structure
+			img.no-border(src='/img/centralized.svg')
+
+		section
+			h3 “Structure”
+			img.no-border(src='/img/centralized.svg')
+
+		section
 			h2 Setup and Configuration
 			pre: code.bash(data-trim)
-				| git config --global user.name "me myself"
+				| git config --global user.name "Edward Stark"
 
 			pre: code.bash(data-trim)
-				| git config --global user.email me@myself.com
+				| git config --global user.email neddie@westeros.co.uk
 
 		section
 			h2 git-Areas
@@ -155,7 +163,7 @@ block content
 	section
 		section
 			h1 Branches
-			h4 to go hang yourself
+			h4 The ones you get to climb when you're grown up
 
 		section
 			h2 Demo
@@ -225,6 +233,26 @@ block content
 
 			pre: code.bash(data-trim)
 				| git stash pop	 			# apply saved changes
+
+	section
+		section
+			h1 Rules
+			h3 well … guidelines
+
+		section
+			h2 Thou shalt not lie
+			h4 … or get caught
+			ul
+				li don't change history others have seen
+				li don't force-push
+
+		section
+			h2 Thou shalt tell a story
+			ul
+				li Good commits
+				li Good commit messages
+				li Good commit ordering
+
 
 	section
 		section
