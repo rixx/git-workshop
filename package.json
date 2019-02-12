@@ -1,6 +1,7 @@
 {
-  "name": "git.cutebit.de",
-  "version": "0.2.0",
+  "name": "git-workshops",
+  "version": "0.1.0",
+  "private": true,
   "description": "",
   "engines": {
     "node": "0.10",
@@ -13,12 +14,17 @@
     "dynamic-content": "0.0.3",
     "jade": "1.x",
     "marked": "0.3.x",
-    "roots": "~3",
+    "roots": "^5.2.0",
     "rupture": "0.4.x",
     "stylus": "0.48.x"
   },
   "main": "roots watch",
   "scripts": {
-    "start": "roots watch"
+    "start": "roots watch",
+    "build": "roots compile",
+    "deploy": "npm run build -s && gh-pages -d public"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
